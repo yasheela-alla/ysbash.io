@@ -1,77 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
+ <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&nbsp;Custom Portfolio Terminal</title>
-    <meta
-      name="description"
-      content="My secret terminal portfolio. You shouldn't be reading this."
-    />
-    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon" />
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
+      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"
     />
-    <link rel="stylesheet" href="./src/styles.css" />
-
-    <script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.17/dist/index.min.js"></script>
   </head>
+  <style>
+    #screen {
+      position: relative;
+      width: 500px;
+      height: 500px;
+      background-color: green;
+    }
+
+    #scan,
+    #bezelf {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    #content {
+      font-family: VT323;
+      padding: 50px;
+    }
+  </style>
   <body>
-    <canvas id="canvas"></canvas>
-    <section class="hero is-fullheight">
-      <div class="hero-body">
-        <div class="container">
-          <div class="columns">
-            <div class="column is-flex">
-              <div class="column-child terminal shadow">
-                <div class="terminal-bar dark-mode">
-                  <div class="icon-btn close"></div>
-                  <div class="icon-btn min"></div>
-                  <div class="icon-btn max"></div>
-                  <div
-                    class="terminal-bar-text is-hidden-mobile dark-mode-text"
-                  >
-                    guest@twan: ~
-                  </div>
-                </div>
-                <div
-                  class="terminal-window primary-bg"
-                  onclick="document.getElementById('dummyKeyboard').focus();"
-                >
-                  <div class="terminal-output" id="terminalOutput">
-                    <div class="terminal-line">
-                      <span class="help-msg"
-                        >Welcome to my portfolio! — Type
-                        <span class="code">help</span> for a list of supported
-                        commands.</span
-                      >
-                    </div>
-                  </div>
-                  <div class="terminal-line">
-                    <span class="success">➜</span>
-                    <span class="directory">~</span>
-                    <span class="user-input" id="userInput"></span>
-                    <input
-                      type="text"
-                      id="dummyKeyboard"
-                      class="dummy-keyboard"
-                      autocomplete="off"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <footer class="footer">
-        <div class="content has-text-centered">
-          <p>Made with 💙 by Twan Mulder.</p>
-        </div>
-      </footer>
-    </section>
-    <script src="./src/index.js"></script>
+    <div id="screen">
+      <img src="scanlines.png" id="scan" />
+      <img src="bezel.png" id="bezel" />
+      <div id="content">s</div>
+    </div>
   </body>
 </html>
