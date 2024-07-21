@@ -31,9 +31,7 @@ const execute = function executeCommand(input) {
     output += `<div class="output"> ${COMMANDS[input]} </div>`;
   }
 
-  terminalOutput.innerHTML = `${
-    terminalOutput.innerHTML
-  }<div class="terminal-line">${output}</div>`;
+  terminalOutput.innerHTML = `${terminalOutput.innerHTML}<div class="terminal-line">${output}</div>`;
   terminalOutput.scrollTop = terminalOutput.scrollHeight;
 };
 
@@ -74,13 +72,18 @@ const startTheParty = () => {
     size: "1",
     animate: true,
     props: ["square", "triangle", "line"],
-    colors: [[165, 104, 246], [230, 61, 135], [0, 199, 228], [253, 214, 126]],
+    colors: [
+      [165, 104, 246],
+      [230, 61, 135],
+      [0, 199, 228],
+      [253, 214, 126],
+    ],
     clock: "25",
     rotate: true,
     width: "1680",
     height: "971",
     start_from_edge: true,
-    respawn: false
+    respawn: false,
   };
   var confetti = new ConfettiGenerator(confettiSettings);
   confetti.render();
@@ -94,21 +97,18 @@ const whooops = () => {
 };
 
 const COMMANDS = {
-  help:
-    'Supported commands: ["<span class="code">about</span>", "<span class="code">experience</span>", "<span class="code">education</span>", "<span class="code">skills</span>", "<span class="code">contact</span>"]',
+  help: 'Supported commands: ["<span class="code">about</span>", "<span class="code">experience</span>", "<span class="code">education</span>", "<span class="code">skills</span>", "<span class="code">contact</span>"]',
   about:
-    "Hello 👋<br>I'm Twan Mulder. I’m a 23 yr old web developer currently living in the Netherlands. I have a burning passion to want and help others with code that I create. I enjoy the limitless potential of impact that I can have with what I build. It is what pushes me every day to become a better developer.",
+    "Hello 👋<br>I'm Yasheela Alla, a 20 yr old undergraduate and a tech enthusiast, currently living in India. I enjoy the limitless potential of impact that I can have with what I build. It is what pushes me every day to become better at doing what i love.",
   skills:
-    '<span class="code">Languages:</span> HTML, CSS, JavaScript<br><span class="code">Technologies:</span> Git, REST API\'s<br><span class="code">Frameworks:</span> React.js, Redux, GSAP, Sass, Vue.js',
+    '<span class="code">Languages:</span> HTML, CSS, JavaScript, python, c++ <br><span class="code">Tools:</span> Packet tracer, wireshark, tcpdump, VirtualBox',
   education:
-    "B.Sc. Interactive Media & Technologies - Hanze University of Applied Sciences, Groningen",
-  experience:
-    "I'm currently working as a front-end developer at Storm Digital. My main areas of focus are helping our creative team build succesful digital creatives, and developing A/B tests for our CRO team.",
+    "B.tech Second year undergraduate, Majoring in Electronics and communications engineering",
+  experience: "I'm still looking for oppurtunities",
   contact:
-    'You can contact me on any of the following links:<br>["<a target="_blank" rel="noopener noreferrer" href="https://github.com/twanmulder" class="social link">GitHub</a>", "<a target="_blank" rel="noopener noreferrer" href="https://medium.com/@toktoktwan" class="social link">Medium</a>", "<a target="_blank" rel="noopener noreferrer" href="https://www.twitter.com/toktoktwan/" class="social link">Twitter</a>"]',
+    'You can contact me on any of the following links:<br>["<a target="_blank" rel="noopener noreferrer" href="https://github.com/yasheela-alla" class="social link">GitHub</a>","<a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/alla-yasheela/" class="social link">linkedin</a>"]',
   bob: "<span style='font-size: 2rem;'>🐕</span>",
   party: "🎉🎉🎉",
-  beer:
-    '["<a target="_blank" rel="noopener noreferrer" href="https://anytimers.netlify.com" class="social link">Anytimers!</a>"]',
-  "sudo rm -rf": ""
+  beer: '["<a target="_blank" rel="noopener noreferrer" href="https://anytimers.netlify.com" class="social link">Anytimers!</a>"]',
+  "sudo rm -rf": "",
 };
