@@ -1,38 +1,61 @@
- <html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
-      rel="stylesheet"
-    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Portfolio Terminal</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+    <script src="./src/index.js" defer></script>
   </head>
-  <style>
-    #screen {
-      position: relative;
-      width: 500px;
-      height: 500px;
-      background-color: green;
-    }
-
-    #scan,
-    #bezelf {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-    }
-
-    #content {
-      font-family: VT323;
-      padding: 50px;
-    }
-  </style>
   <body>
-    <div id="screen">
-      <img src="scanlines.png" id="scan" />
-      <img src="bezel.png" id="bezel" />
-      <div id="content">s</div>
-    </div>
-  </body>
+    <section class="hero is-fullheight">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-flex">
+              <div class="column-child terminal shadow">
+                <div class="terminal-bar dark-mode">
+                  <div class="icon-btn close"></div>
+                  <div class="icon-btn min"></div>
+                  <div class="icon-btn max"></div>
+                  <div
+                    class="terminal-bar-text is-hidden-mobile dark-mode-text"
+                  >
+                    guest@ysterm: ~
+                  </div>
+                </div>
+                <div class="terminal-window primary-bg">
+                  <div class="terminal-output" id="terminalOutput">
+                    <div class="terminal-line">
+                      <span class="help-msg"
+                        >Welcome to my portfolio! — Type
+                        <span class="code">help</span> for a list of supported
+                        commands.</span
+                      >
+                    </div>
+                  </div>
+                  <div class="terminal-line">
+                    <span class="success">➜</span>
+                    <span class="directory">~</span>
+                    <span class="user-input" id="userInput"></span>
+                    <input
+                      type="text"
+                      id="dummyKeyboard"
+                      class="dummy-keyboard"
+                      autocomplete="off"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="content has-text-centered">
+          <p>Made by Yasheela Alla.</p>
+        </div>
+      </footer>
+    </section>
+  </body>
 </html>
